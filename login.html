@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=0">		
+		<title></title>
+		<link rel="stylesheet" href="../css/weui.css" />
+		<link rel="stylesheet" href="../css/weuix.css" />		
+		<script src="../js/zepto.min.js"></script>
+		<script src="../js/zepto.weui.js"></script>
+		
+		<script>
+			
+			$(function() {
+				
+				//返回上一页
+				$("#menu_back").click(function(){
+					
+					window.history.back();
+					
+    
+				});
+				
+				//返回上一页
+				$("#btn").click(function(){
+					
+					var zh = $("#zh").val();
+					var pwd = $("#pwd").val();
+					
+					if(zh==""){
+						$.toptip("账号不能为空");
+						$("#zh").focus();
+						return false;
+						
+					}
+					
+					if(pwd==""){
+						$.toptip("密码不能为空");
+						$("#pwd").focus();
+						return false;
+						
+						
+					}
+					
+					
+				    
+				});
+				
+				
+				});
+			
+			function cleartxt(obj){
+			    $(obj).prev().find('.weui-input').val("");
+			    return false;
+			}
+		</script>
+	</head>
+	<body>
+		<div class="weui-btn_default weui-header ">
+		<div class="weui-header-left" id="menu_back"> <a class="icon icon-109 f-green"></a>  </div>
+		 <h1 class="weui-header-title f-green">登录</h1>
+		 
+		 <div class="weui-loadmore weui-loadmore_line">
+		     <span class="weui-loadmore__tips"><h4>请登录</h4></span>
+		 </div>
+		 
+		 <div class="weui-cells">
+		     <div class="weui-cell">
+		         <div class="weui-cell__bd">
+		             <input id="zh" class="weui-input" placeholder="请输入账号" type="text">
+		         </div>
+		         <i class="weui-icon-clear" onclick="cleartxt(this)"></i>
+		     </div>
+		 </div>
+		 <div class="weui-cells">
+		     <div class="weui-cell">
+		         <div class="weui-cell__bd">
+		             <input id="pwd" class="weui-input" placeholder="请输入密码" type="password">
+		         </div>
+		         <i class="weui-icon-clear" onclick="cleartxt(this)"></i>
+		     </div>
+		 </div>
+		 <div class="weui-btn-area">
+		     <a class="weui-btn weui-btn_primary" href="javascript:" id="btn">确定</a>
+		 </div>
+		 
+		 <div class="tright page-hd f-green">
+			 
+			 <a href="reg.html">注册</a>
+			 
+		 </div>
+		  
+		  </div>
+	</body>
+</html>
